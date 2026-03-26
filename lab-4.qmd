@@ -94,7 +94,9 @@ Add the following code chunk options, one at a time, and set each to `false` and
 a.  You have the following code chunk again.
 
     ```{r}
-    #| eval: false
+    #| eval: true
+    #| fig-width: 7
+    #| fig-asp: 0.6
 
     ggplot(penguins, aes(x = bill_len, y = bill_dep)) + 
       geom_point()
@@ -102,16 +104,21 @@ a.  You have the following code chunk again.
 
     Add `fig-width` and `fig-asp` as code chunk options. Try setting `fig-width` to values between 1 and 10. Try setting `fig-asp` to values between 0.1 and 1. Re-render the document after each value and observe its effect. Ultimately, choose values that make the plot look visually pleasing in the rendered document. Based on the behavior you observe, describe what each chunk option does.
 
-b.  You have the following code chunk, but look carefully, it's not exactly the same!
+The fig-width option controls how wide the figure appears in the rendered document, while fig-asp controls the aspect ratio of the figure, or how tall it appears relative to its width. Increasing fig-width makes the plot wider, and increasing fig-asp makes the plot taller.
+
+a.  You have the following code chunk, but look carefully, it's not exactly the same!
 
     ```{r}
-    #| eval: false
+    #| eval: true
+    #| error: true
 
-    gplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+    gplot(penguins, aes(x = bill_len, y = bill_dep) + 
       geom_point()
     ```
 
     Add `error` as a code chunk option and set it to `false` and then set it to `true`. After each value, render your document and observe its effect. Ultimately, choose the value that allows you to render your document without altering the code. Based on the behavior you observe, describe what this code chunk option does.
+
+The error chunk option controls whether errors in a code chunk stop the document from rendering. When error = FALSE, the document stops rendering if an error occurs. When error = TRUE, the document continues rendering and displays the error message in the output.
 
 ::: callout-tip
 Reading [the documentation](https://quarto.org/docs/reference/formats/pdf.html#execution) might also be hepful.
