@@ -75,17 +75,19 @@ a.  Which of the chunk label options above is the best option? Explain your reas
 You have the following code chunk:
 
 ```{r}
-#| eval: false
-    
-ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+#| warning: true
+ggplot(penguins, aes(x = bill_len, y = bill_dep)) + 
   geom_point()
 ```
 
 Add the following code chunk options, one at a time, and set each to `false` and then to `true`. After each value, render your document and observe its effect. Ultimately, choose the values that are the most appropriate for this code chunk. Based on the behaviors you observe, describe what each code chunk option does.
 
 -   `echo`
+    -   When echo = true, the code is shown in the document, whereas when echo = false, the code is hidden and only the output (the graph) is shown.
 -   `warning`
+    -   When warning = true, the warning message is shown in the document, where as when warning is false, it hides the warning messages.
 -   `eval`
+    -   when eval is true, the document runs the code, when eval is false, the document doesn't run the code
 
 ## Question 3
 
@@ -94,7 +96,7 @@ a.  You have the following code chunk again.
     ```{r}
     #| eval: false
 
-    ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+    ggplot(penguins, aes(x = bill_len, y = bill_dep)) + 
       geom_point()
     ```
 
