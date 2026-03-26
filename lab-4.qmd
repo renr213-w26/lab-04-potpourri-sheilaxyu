@@ -21,36 +21,54 @@ In this lab you'll review and get practice with a variety of concepts, methods, 
 
 a.  Add each of strings below to the code chunk provided in your document, render the document, and determine if the string is a proper code chunk label. If not, explain why and describe how you could fix it so the document renders.
 
-    -   Chunk label 1:
+b.  Chunk label 1:
 
-    ```         
-    #| label: a-label 
-    #| with-a-line-break
-    ```
+```         
+#| label: a-label 
+#| with-a-line-break
+```
 
-    -   Chunk label 2:
+This is not a proper chunk label because it is split across two lines. Chunk labels must be defined on a single line, so the code can be fixed by combining the label into one line, such as:
 
-    ```         
-    #| label: areaaaaaaaaaaaaaaaaaaaaaallllllllllllllllllyyyyylooooooooooooooooooonglabel 
-    ```
+```         
+#| label: a-label-with-a-line-break
+```
 
-    -   Chunk label 3:
+-   Chunk label 2:
 
-    ```         
-    #| label: label with spaces
-    ```
+```         
+#| label: areaaaaaaaaaaaaaaaaaaaaaallllllllllllllllllyyyyylooooooooooooooooooonglabel 
+```
 
-    -   Chunk label 4:
+This chunk label works.
 
-    ```         
-    #| label: label-with-dashes
-    ```
+-   Chunk label 3:
 
-    ::: callout-tip
-    Try each label option in the code chunk provided in your document. If it gives you an error (document doesn't render), you know it's not a proper chunk label.
-    :::
+```         
+#| label: label with spaces
+```
 
-b.  Which of the chunk label options above is the best option? Explain your reasoning in 1-2 sentences.
+This chunk label will not work as Quarto treats labels like IDs, so spaces break things. To fix this, we could use underscore or dashes to connect different words, such as:
+
+```         
+#| label: label_with_spaces
+```
+
+-   Chunk label 4:
+
+```         
+#| label: label-with-dashes
+```
+
+This chunk label works.
+
+::: callout-tip
+Try each label option in the code chunk provided in your document. If it gives you an error (document doesn't render), you know it's not a proper chunk label.
+:::
+
+a.  Which of the chunk label options above is the best option? Explain your reasoning in 1-2 sentences.
+
+    a.  Chunk label 4 is the best option as it functions properly, and it is clear, concise and easy to read.
 
 ## Question 2
 
@@ -177,10 +195,7 @@ When you both color and facet by the same variable, you'll end up with a redunda
 
 ::: render-commit-push
 Render, commit, and push one last time. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
-
-
 :::
-
 
 ## Grading
 
