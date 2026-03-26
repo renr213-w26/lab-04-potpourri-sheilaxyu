@@ -27,8 +27,7 @@ a.  Add each of strings below to the code chunk provided in your document, rende
 b.  Chunk label 1:
 
 ```         
-#| label: a-label 
-#| with-a-line-break
+#| label: a-label-with-a-line-break
 ```
 
 This is not a proper chunk label because it is split across two lines. Chunk labels must be defined on a single line, so the code can be fixed by combining the label into one line, such as:
@@ -48,7 +47,7 @@ This chunk label works.
 -   Chunk label 3:
 
 ```         
-#| label: label with spaces
+#| label: label_with_spaces
 ```
 
 This chunk label will not work as Quarto treats labels like IDs, so spaces break things. To fix this, we could use underscore or dashes to connect different words, such as:
@@ -138,8 +137,6 @@ Render, commit, and push one last time. Make sure that you commit and push all c
 ## Question 4
 
 The following chart was [shared](https://twitter.com/GraphCrimes/status/1566264004288331776) by \@GraphCrimes on X/Twitter on September 3, 2022.
-
-![](images/private-sector.png){fig-align="center"}
 
 a.  What is misleading about this graph?
     a.  The graph is misleading because the stacked bar segments are not clearly scaled or aligned to a consistent baseline, making it difficult to accurately compare the proportions across categories.
@@ -271,8 +268,6 @@ Render, commit, and push one last time. Make sure that you commit and push all c
 # Part 3 - DatasauRus
 
 The data frame you will be working with in this part is called `datasaurus_dozen` and it's in the **datasauRus** package. This single data frame contains 13 datasets, designed to show us why data visualization is important and how summary statistics alone can be misleading. The different datasets are marked by the `dataset` variable, as shown in @fig-datasaurus.
-
-![The \`datasaurus_dozen\` data frame stacks 13 datasets on top of each other. This figure shows the first three datasets.](images/datasaurus-dozen.png){#fig-datasaurus fig-align="center" width="432"}
 
 ::: callout-note
 If it's confusing that the data frame is called `datasaurus_dozen` when it contains 13 datasets, you're not alone! Have you heard of a [baker's dozen](https://www.mentalfloss.com/article/32259/why-bakers-dozen-13)?
